@@ -9,9 +9,20 @@
 
 #}
 
-{% set animals = ['cat', 'dog', 'bird', 'fish'] %}
+{%- set animals = ['cat', 'dog', 'bird', 'fish'] -%}
 
-
-{% for animal in animals %}
+{#adding "-" after and before the "%" helps in reducing the number of white space lines in the output#}
+{%- for animal in animals -%}
     {{ animal }} is number {{loop.index}}
 {% endfor %}
+
+{# Defining a dictionary #}
+
+{% set dict = {
+    'word' : 'data',
+    'part_of_speech' : 'noun',
+    'definition' : 'the building block of life'
+}
+%}
+
+{{ dict['word'] }} is a {{ dict['part_of_speech'] }} and it is defined as {{ dict['definition'] }}
